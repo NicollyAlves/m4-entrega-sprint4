@@ -9,10 +9,7 @@ const updateUserService = async (userData: IUserUpdate, userId: string): Promise
 
     const findUser = await userRepository.findOneBy({
         id: userId
-    })
-
-    console.log(findUser);
-    
+    })    
 
     const updatedUser = userRepository.create({
         ...findUser,
@@ -23,8 +20,6 @@ const updateUserService = async (userData: IUserUpdate, userId: string): Promise
     const updateUserWithoutPassword = await userWithoutPasswordSerializer.validate(updatedUser, {
         stripUnknown: true
     })
-
-    console.log(updateUserWithoutPassword);
     
     return updateUserWithoutPassword
 }

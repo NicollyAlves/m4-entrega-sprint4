@@ -11,11 +11,7 @@ const listUsersService = async() => {
         const { password: pass, ...user} = el
 
         return user
-    })
-
-    console.log(removePass);
-    
-
+    })    
     return removePass
 }
 
